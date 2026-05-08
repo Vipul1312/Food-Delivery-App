@@ -3,10 +3,14 @@ import userModel from "../models/userModel.js";
 import Stripe from "stripe"
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
+// config variable
+const currency = "inr";
+const deliveryCharge = 50;
+
 // placing user order for frontend
 const placeOrder = async(req,res)=>{
 
-    const frontend_url = "http://localhost:5174"
+    const frontend_url = "https://food-delivery-frontend-qobj.onrender.com"
 
     try {
         const newOrder = new orderModel({
