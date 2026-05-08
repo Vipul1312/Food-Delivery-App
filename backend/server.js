@@ -20,6 +20,8 @@ app.use(cors({
     origin: [
         "http://localhost:5173",
         "http://localhost:5174",
+        "https://food-delivery-frontend-lilac-five.vercel.app",
+        "https://food-delivery-admin-pink-pi.vercel.app"
     ]
 }))
 
