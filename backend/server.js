@@ -16,7 +16,12 @@ connectDB();
 
 // middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "http://localhost:5174",
+    ]
+}))
 
 // api endpoints
 app.use("/api/food",foodRouter);
@@ -33,4 +38,4 @@ app.listen(port,()=>{
     console.log(`server started on http://localhost:${port}`);
 })
 
-
+export default app;
